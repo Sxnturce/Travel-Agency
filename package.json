@@ -1,0 +1,15 @@
+{
+  "name": "travelagency",
+  "version": "1.0.0",
+  "description": "Aplicacion de una agencia de viajes",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git remote add origin https://github.com/Sxnturce/Travel-Agency.git"
+  },
+  "author": "SebastianSR",
+  "license": "ISC"
+}
