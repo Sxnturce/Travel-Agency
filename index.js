@@ -1,7 +1,17 @@
 import express from "express";
 import router from "./routes/app.js";
+import db from "./config/db.js";
 
 const app = express()
+
+//Conectar la db
+
+db.authenticate()
+  .then(() => console.log("Conexion exitosa"))
+  .catch(e => {
+    throw new Error(`Error al intentar conectar la db ${e}`)
+  })
+
 
 //Definir el puerto
 const port = process.env.PORT ?? 4000
