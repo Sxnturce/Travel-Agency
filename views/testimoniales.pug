@@ -2,10 +2,10 @@ extends ./layout/index
 block contenido
   main.container.mt-5 
     h1.text-center.mt-5 #{pagina}
+    blockquote.text-center Leé sobre nuestros clientes: 
+    include ./layout/block_testimoniales
     .row
-
       h2.d-block.w-100.text-center Agrega un testimonial
-      
       .row.justify-content-center.col
         .col-md-8
           form(action="/testimoniales", method="post") 

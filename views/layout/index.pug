@@ -6,7 +6,8 @@ html(lang="es")
     title #{name} | #{pagina}
     link(rel="stylesheet", href="/css/bootstrap.css")
     link(rel="stylesheet", href="/css/style.css")
-  body 
+  body(class= clase) 
     include header
+    block slider
     block contenido
     include footer

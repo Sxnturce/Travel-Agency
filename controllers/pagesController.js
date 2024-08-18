@@ -1,9 +1,24 @@
 import { Viaje } from "../models/Viaje.js"
+import { Testimoniales } from "../models/Testimoniales.js"
 
-export const paginaInicio = (req, res) => {
-  res.render("inicio", {
-    pagina: "Inicio"
-  })
+//Consultar 3 viajes del modelo Viaje
+export const paginaInicio = async (req, res) => {
+  //Dividimos la query para usar un PromiseALL
+  const viaje = Viaje.findAll({ limit: 3 })
+  const testimonial = Testimoniales.findAll({ limit: 3 })
+
+  //Ya que estas promesas estan en pending las concretamos usando el await
+  const [viajes, testimoniales] = await Promise.all([viaje, testimonial])
+  try {
+    res.render("inicio", {
+      pagina: "Inicio",
+      clase: "home",
+      viajes,
+      testimoniales
+    })
+  } catch (e) {
+    throw new Error(`Error al traer los datos ${e}`)
+  }
 }
 
 export const paginaNosotros = (req, res) => {
@@ -22,10 +37,16 @@ export const paginaViajes = async (req, res) => {
   })
 }
 
-export const paginaTestimoniales = (req, res) => {
-  res.render("testimoniales", {
-    pagina: "Testimoniales"
-  })
+export const paginaTestimoniales = async (req, res) => {
+  const testimoniales = await Testimoniales.findAll()
+  try {
+    res.render("testimoniales", {
+      pagina: "Testimoniales",
+      testimoniales
+    })
+  } catch (e) {
+    throw new Error(`Erro al consultar los testimoniales ${e}`)
+  }
 }
 
 //Muestra un vijae por su id

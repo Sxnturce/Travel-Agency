@@ -1,5 +1,26 @@
 extends ./layout/index
+block slider
+  .slider
+    h1 Rio de Janeiro
+    em aventura
 block contenido
-  main.container.mt-5 
-    .row
-      h1=pagina
+  main.container.mt-5
+    h2.text-center.mb-4 Sobre Nosotros
+    .row.mb-4
+      .col-md-6
+        p Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium obcaecati iure corporis voluptates earum incidunt a, minus sunt eveniet vero voluptatibus, ipsum culpa, voluptas molestias odit? Molestias illum sunt deleniti.Aliquid qui quos est inventore odio quo rerum itaque, totam, dolorum officia, sequi incidunt? Est possimus recusandae facere enim quis, aut dolor debitis impedit alias cupiditate accusantium ducimus odit voluptas?
+      .col-md-6
+        img.img-fluid(src="/img/inicio_nosotros.jpg", alt="nosotros_img")
+    include ./layout/block_viajes
+  .descuento
+    .container
+      .row
+        .col-md-6
+          .contenido
+            h3 5% de descuento
+            p.titulo Viaje a Canada
+            p.fecha 10 de abril de #{year} - 30 de Octubre #{year}
+            p.precio $2.500 USD
+  .container
+    h2.mt-5.text-center Testimoniales 
+    include ./layout/block_testimoniales
