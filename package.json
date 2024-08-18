@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "nodemon --watch index.js",
     "tailwind": "npx tailwindcss -i ./src/input.css -o ./src/output.css --watch",
-    "start": "npm index.js"
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
