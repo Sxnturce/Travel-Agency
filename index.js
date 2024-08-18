@@ -8,7 +8,7 @@ const app = express()
 
 //Conectar la db
 db.authenticate()
-  .then(() => console.log("Conexion exitosa"))
+  .then(() => console.log("Conexion exitosa!!"))
   .catch(e => {
     throw new Error(`Error al intentar conectar la db ${e}`)
   })
