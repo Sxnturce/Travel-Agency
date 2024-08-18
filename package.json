@@ -6,7 +6,8 @@
   "type": "module",
   "scripts": {
     "dev": "nodemon --watch index.js",
-    "tailwind": "npx tailwindcss -i ./src/input.css -o ./src/output.css --watch"
+    "tailwind": "npx tailwindcss -i ./src/input.css -o ./src/output.css --watch",
+    "start": "npm index.js"
   },
   "repository": {
     "type": "git",
