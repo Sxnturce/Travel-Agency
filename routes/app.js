@@ -1,10 +1,12 @@
 import express from "express"
-import { paginaInicio } from "../controllers/pagesController.js"
-import { paginaNosotros } from "../controllers/pagesController.js"
-import { paginaViajes } from "../controllers/pagesController.js"
-import { paginaTestimoniales } from "../controllers/pagesController.js"
-import { paginaDetalle } from "../controllers/pagesController.js"
-
+import { guardarTestimonial } from "../controllers/testimonialesController.js"
+import {
+  paginaInicio,
+  paginaNosotros,
+  paginaViajes,
+  paginaDetalle,
+  paginaTestimoniales
+} from "../controllers/pagesController.js"
 
 const router = express.Router()
 
@@ -17,5 +19,6 @@ router.get("/viajes", paginaViajes)
 router.get("/viajes/:slug", paginaDetalle)
 
 router.get("/testimoniales", paginaTestimoniales)
+router.post("/testimoniales", guardarTestimonial)
 
 export default router

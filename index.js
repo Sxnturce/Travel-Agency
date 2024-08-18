@@ -5,7 +5,6 @@ import db from "./config/db.js";
 const app = express()
 
 //Conectar la db
-
 db.authenticate()
   .then(() => console.log("Conexion exitosa"))
   .catch(e => {
@@ -25,6 +24,9 @@ app.use((req, res, next) => {
   res.locals.name = "Agencia de Viajes"
   next()
 })
+
+//Agregar body parser para leer datos de formularios
+app.use(express.urlencoded({ extended: true }))
 
 //Agregamos un router
 app.use("/", router)

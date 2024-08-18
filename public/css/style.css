@@ -9,7 +9,7 @@ body {
 h1,
 h2,
 h3 {
-	font-family: "Staatliches", cursive;
+	font-family: "Open Sans", sans-serif;
 	color: #15b9d5;
 }
 h1 {
@@ -22,12 +22,18 @@ h3 {
 	font-size: 3rem;
 }
 
+.form-sizing {
+	resize: none;
+	max-height: 120px;
+}
+
 .btn-success {
 	background-color: #dc135f;
 	border-color: #dc135f;
-	padding: 0.8rem 0;
+	padding: 0.35rem 0;
 	text-transform: uppercase;
-	border-radius: 0.8rem;
+	border-radius: 0.3rem;
+	font-weight: bold;
 }
 .btn-success:hover {
 	background-color: rgb(184, 5, 73);
@@ -88,15 +94,18 @@ p {
 	background-color: #15b9d5;
 }
 header .nav a {
-	font-family: "Staatliches", cursive;
 	font-size: 2rem;
 	color: white;
 }
+.error {
+	color: rgb(219, 81, 81);
+	font-size: 1rem;
+}
 footer .nav a,
 .copyright {
-	font-family: "Staatliches", cursive;
 	font-size: 1.6rem;
 	color: black;
+	font-weight: bold;
 }
 .listado-iconos {
 	background-color: rgb(245, 245, 245);

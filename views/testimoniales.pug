@@ -1,5 +1,27 @@
 extends ./layout/index
 block contenido
   main.container.mt-5 
+    h1.text-center.mt-5 #{pagina}
     .row
-      h1=pagina
+
+      h2.d-block.w-100.text-center Agrega un testimonial
+      
+      .row.justify-content-center.col
+        .col-md-8
+          form(action="/testimoniales", method="post") 
+            .form-group 
+              label(for="nombre") Nombre:
+              input#nombre.form-control(type="text",placeholder="Tu nombre" name="nombre",value= nombre)
+              - const snombre = errors?.find( err => err.name)
+              p.error=snombre ? snombre.name :""
+            .form-group 
+              label(for="email") Correo:
+              input#email.form-control(type="text",placeholder="Tu email" name="email", value= email) 
+              - const semail = errors?.find( err => err.email)
+              p.error=semail ? semail.email :""
+            .form-group 
+              label(for="mensaje") Mensaje:
+              textarea#mensaje.form-control.form-sizing(name="mensaje",cols="30",rows="10",placeholder="Tu mensaje")= mensaje 
+              - const msg = errors?.find( err => err.msg)
+              p.error=msg ? msg.msg :""
+            input.btn.btn-success.btn-block(type="submit")
